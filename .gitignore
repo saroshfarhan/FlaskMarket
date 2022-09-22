@@ -1,0 +1,4 @@
+/venv
+/market/market.db
+
+*.pyc

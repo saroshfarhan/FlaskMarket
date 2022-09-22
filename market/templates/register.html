@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+<div class="container text-center" style="margin-top: 2rem;">
+    <form action="" method="POST" class="form-register" style="color: white;">
+        {{ form.hidden_tag() }} <!--to evade CSRF attack-->
+        <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZdv8RUw-NYGqMwASz1RBiwd0N5uqvIe8r_EokQiZmw&s" alt="site logo">
+        <h1 class="h3 mb-3 font-weight-normal">
+            Please Create your Account
+        </h1>
+        <br>
+        <div class="form-group">
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="Email Address") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="Password") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+        </div>
+        <br>
+        {{ form.submit(class="btn btn-md btn-block btn-primary") }}
+    </form>
+</div>
+{% endblock %}
