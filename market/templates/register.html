@@ -5,7 +5,7 @@ Register Page
 {% endblock %}
 
 {% block content %}
-<div class="container text-center" style="margin-top: 2rem;">
+<div class="container text-center" style="margin-top: 1rem;">
     <form action="" method="POST" class="form-register" style="color: white;">
         {{ form.hidden_tag() }} <!--to evade CSRF attack-->
         <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZdv8RUw-NYGqMwASz1RBiwd0N5uqvIe8r_EokQiZmw&s" alt="site logo">
@@ -32,6 +32,12 @@ Register Page
             {{ form.password2.label() }}
             {{ form.password2(class="form-control", placeholder="Confirm Password") }}
         </div>
+        
+        <div class="checkbox mb-3">
+            <h6>Already have an account?</h6>
+            <a href="{{ url_for('login_page') }}" class="btn btn-sm btn-secondary">Login</a>
+        </div>
+
         <br>
         {{ form.submit(class="btn btn-md btn-block btn-primary") }}
     </form>

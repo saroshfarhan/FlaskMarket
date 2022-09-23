@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form action="" method="POST" class="form-signin" style="color: white ; margin-top: 2rem;">
+            {{ form.hidden_tag() }} <!--to evade CSRF attack-->
+            <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZdv8RUw-NYGqMwASz1RBiwd0N5uqvIe8r_EokQiZmw&s" alt="site logo">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Login
+            </h1>
+            <br>
+            <div class="form-group">
+                {{ form.username.label() }}
+                {{ form.username(class="form-control", placeholder="User Name") }}
+            </div>
+            
+            <div class="form-group">
+                {{ form.password.label() }}
+                {{ form.password(class="form-control", placeholder="Password") }}
+            </div>
+            <br>
+            <div class="checkbox mb-3">
+                <h6>Do not have an account?</h6>
+                <a href="{{ url_for('register_page') }}" class="btn btn-sm btn-secondary">Register</a>
+            </div>
+            <br>
+            {{ form.submit(class="btn btn-md btn-block btn-primary") }}
+        
+        </form>
+    </div>
+</body>
+{% endblock %}
