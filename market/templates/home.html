@@ -3,5 +3,13 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-    <h2>This is the content of home page</h2>
+<body class="text-center">
+    <div class="container" style="background-color: #264661; margin-top: 2rem;">
+        <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZdv8RUw-NYGqMwASz1RBiwd0N5uqvIe8r_EokQiZmw&s" alt="site logo" style="margin-top: 2rem;">
+        <h4>Welcome to Flask Market!</h4>
+        <h6>To get started please click below button</h6>
+        <br>
+        <a href="{{ url_for('register_page') }}" class="btn btn-outline btn-primary" style="margin-bottom: 2rem;">Get Started</a>
+    </div>
+</body>
 {% endblock %}
