@@ -1,4 +1,4 @@
 /venv
 /market/market.db
-
+.DS_Store
 *.pyc
